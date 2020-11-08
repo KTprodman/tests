@@ -3,5 +3,7 @@ import numpy as np
 
 import gym
 
-rnv = gym.
+env = gym.make('FrozenLake-v0')
+
+
 
