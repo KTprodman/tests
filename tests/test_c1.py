@@ -1,5 +1,5 @@
 from t1 import Stack
-from pytest import fixture
+from pytest import fixture, mark
 
 
 @fixture
@@ -7,10 +7,12 @@ def stack():
     return Stack()
 
 
+@mark.smoke
 def test_length(stack):
     assert len(stack) == 0
 
 
+@mark.smoke
 def test_push(stack):
     stack.empty()
     stack.push(1)
@@ -18,6 +20,7 @@ def test_push(stack):
     assert stack._stack[-1] == 1
 
 
+@mark.smoke
 def test_pop(stack):
     stack.empty()
     stack.push(10)
